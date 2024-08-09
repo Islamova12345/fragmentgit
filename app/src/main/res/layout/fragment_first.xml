@@ -7,10 +7,10 @@
     android:background="@color/boz"
     tools:context=".FirstFragment">
 
-    <!-- TODO: Update blank fragment layout -->
 
 
     <EditText
+        android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="birinci ededi daxil edin "
@@ -24,6 +24,7 @@
         android:layout_marginTop="30dp"/>
 
     <EditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="ikinciededi daxil edin "
@@ -37,6 +38,7 @@
         android:layout_marginTop="90dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
