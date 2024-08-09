@@ -2,5 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="mavii">#3994DC</color>
+    <color name="mavii">#B7BD7C</color>
+    <color name="boz">#E6D85F</color>
 </resources>
