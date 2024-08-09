@@ -1,71 +1,53 @@
 package com.example.gragmentgit
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.Navigation
+import com.example.gragmentgit.databinding.FragmentFirstBinding
 
-class FirstFragment : Fragment() {
+class FirstFragment : Fragment(R.layout.fragment_first) {
 
-    private lateinit var editText1: EditText
-    private lateinit var editText2: EditText
-    private lateinit var addButton: Button
-    private lateinit var minusButton: Button
-    private lateinit var VurmaButton: Button
-    private lateinit var BolmeButton: Button
+    private lateinit var binding: FragmentFirstBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_first, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentFirstBinding.bind(view)
 
-        editText1 = view.findViewById(R.id.editText1)
-        editText2 = view.findViewById(R.id.editText2)
-        addButton = view.findViewById(R.id.addButton)
-        minusButton=view.findViewById(R.id.minusButton)
-        VurmaButton=view.findViewById(R.id.VurmaButton)
-        BolmeButton=view.findViewById(R.id.BolmeButton)
-
-
-        addButton.setOnClickListener {
-            val number1 = editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = editText2.text.toString().toIntOrNull() ?: 0
+        binding.addButton.setOnClickListener {
+            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
+            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
             val sum = number1 + number2
 
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(sum)
-            findNavController().navigate(action)
+            Navigation.findNavController(it).navigate(action)
         }
-        minusButton.setOnClickListener {
-            val number1 = editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = editText2.text.toString().toIntOrNull() ?: 0
+
+        binding.minusButton.setOnClickListener {
+            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
+            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
             val difference = number1 - number2
 
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(difference)
-            findNavController().navigate(action)
+            Navigation.findNavController(it).navigate(action)
         }
-        VurmaButton.setOnClickListener {
-            val number1 = editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = editText2.text.toString().toIntOrNull() ?: 0
+
+        binding.VurmaButton.setOnClickListener {
+            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
+            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
             val vurma = number1 * number2
 
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(vurma)
-            findNavController().navigate(action)
+            Navigation.findNavController(it).navigate(action)
         }
-        BolmeButton.setOnClickListener {
-            val number1 = editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = editText2.text.toString().toIntOrNull() ?: 0
+
+        binding.BolmeButton.setOnClickListener {
+            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
+            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
             val bolme = number1 / number2
 
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(bolme)
-            findNavController().navigate(action)
+            Navigation.findNavController(it).navigate(action)
         }
-
-
-        return view
     }
 }
