@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/firstFragment"
+    android:id="@+id/nav_graph">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.gragmentgit.FirstFragment"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment">
+            <argument
+                android:name="sumResult"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+         android:name="com.example.gragmentgit.SecondFragment"
+        tools:layout="@layout/fragment_second">
+        <argument
+            android:name="sumResult"
+            app:argType="integer" />
+    </fragment>
+</navigation>
