@@ -16,6 +16,7 @@ class FirstFragment : Fragment() {
     private lateinit var addButton: Button
     private lateinit var minusButton: Button
     private lateinit var VurmaButton: Button
+    private lateinit var BolmeButton: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +29,7 @@ class FirstFragment : Fragment() {
         addButton = view.findViewById(R.id.addButton)
         minusButton=view.findViewById(R.id.minusButton)
         VurmaButton=view.findViewById(R.id.VurmaButton)
+        BolmeButton=view.findViewById(R.id.BolmeButton)
 
 
         addButton.setOnClickListener {
@@ -52,6 +54,14 @@ class FirstFragment : Fragment() {
             val vurma = number1 * number2
 
             val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(vurma)
+            findNavController().navigate(action)
+        }
+        BolmeButton.setOnClickListener {
+            val number1 = editText1.text.toString().toIntOrNull() ?: 0
+            val number2 = editText2.text.toString().toIntOrNull() ?: 0
+            val bolme = number1 / number2
+
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(bolme)
             findNavController().navigate(action)
         }
 
