@@ -53,6 +53,7 @@
 
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/minusButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,6 +68,7 @@
 
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/VurmaButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -81,6 +83,7 @@
 
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/BolmeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
