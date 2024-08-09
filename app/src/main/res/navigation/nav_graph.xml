@@ -21,6 +21,11 @@
         android:id="@+id/secondFragment"
          android:name="com.example.gragmentgit.SecondFragment"
         tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_firstFragment"
+            app:destination="@+id/firsFragment">
+
+        </action>
         <argument
             android:name="sumResult"
             app:argType="integer" />
