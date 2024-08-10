@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_second">
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
-            app:destination="@+id/firsFragment">
+            app:destination="@+id/firstFragment">
 
         </action>
         <argument
