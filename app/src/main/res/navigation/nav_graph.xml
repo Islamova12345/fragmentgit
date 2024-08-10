@@ -8,16 +8,19 @@
         android:id="@+id/firstFragment"
         android:name="com.example.gragmentgit.FirstFragment"
         tools:layout="@layout/fragment_first">
-        <action
+
+           <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment">
+
             <argument
                 android:name="sumResult"
                 app:argType="integer" />
         </action>
+
     </fragment>
 
-    <fragment
+     <fragment
         android:id="@+id/secondFragment"
          android:name="com.example.gragmentgit.SecondFragment"
         tools:layout="@layout/fragment_second">
