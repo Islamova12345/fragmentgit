@@ -14,7 +14,7 @@
             app:destination="@id/secondFragment">
 
             <argument
-                android:name="sumResult"
+                android:name="Result"
                 app:argType="integer" />
         </action>
 
@@ -30,7 +30,7 @@
 
         </action>
         <argument
-            android:name="sumResult"
+            android:name="Result"
             app:argType="integer" />
     </fragment>
 </navigation>

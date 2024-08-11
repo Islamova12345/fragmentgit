@@ -14,40 +14,16 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentFirstBinding.bind(view)
 
-        binding.addButton.setOnClickListener {
+        // Common function to handle operations
+        fun performOperation(operation: (Int, Int) -> Int) {
             val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
             val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
-            val sum = number1 + number2
+            val result = operation(number1, number2)
 
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(sum)
-            Navigation.findNavController(it).navigate(action)
+            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(result)
+            Navigation.findNavController(view).navigate(action)
         }
 
-        binding.minusButton.setOnClickListener {
-            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
-            val difference = number1 - number2
 
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(difference)
-            Navigation.findNavController(it).navigate(action)
-        }
-
-        binding.VurmaButton.setOnClickListener {
-            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
-            val vurma = number1 * number2
-
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(vurma)
-            Navigation.findNavController(it).navigate(action)
-        }
-
-        binding.BolmeButton.setOnClickListener {
-            val number1 = binding.editText1.text.toString().toIntOrNull() ?: 0
-            val number2 = binding.editText2.text.toString().toIntOrNull() ?: 0
-            val bolme = number1 / number2
-
-            val action = FirstFragmentDirections.actionFirstFragmentToSecondFragment(bolme)
-            Navigation.findNavController(it).navigate(action)
-        }
     }
 }
