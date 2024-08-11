@@ -24,6 +24,20 @@ class FirstFragment : Fragment(R.layout.fragment_first) {
             Navigation.findNavController(view).navigate(action)
         }
 
+        binding.addButton.setOnClickListener {
+            performOperation { a, b -> a + b }
+        }
 
+        binding.minusButton.setOnClickListener {
+            performOperation { a, b -> a - b }
+        }
+
+        binding.VurmaButton.setOnClickListener {
+            performOperation { a, b -> a * b }
+        }
+
+        binding.BolmeButton.setOnClickListener {
+            performOperation { a, b -> a / b }
+        }
     }
 }
